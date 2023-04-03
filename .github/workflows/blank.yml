@@ -10,7 +10,7 @@ jobs:
       - name: Use NodeJS to build
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: 14.x
 
       - name: Install node version manager
         run: |
@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         uses: php-actions/composer@v6
         with:
-          php_version: "7.4"
+          php_version: 7.4
           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
           version: 2.x
 
