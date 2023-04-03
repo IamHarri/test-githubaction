@@ -16,6 +16,5 @@ jobs:
         run: |
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
+          nvm --help
           
-      - name: check nvm
-        run: nvm --help
