@@ -26,7 +26,6 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: highlearning
-          path: highlearning.zip
       - name: show all files
         run: ls
 
