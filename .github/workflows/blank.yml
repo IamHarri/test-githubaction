@@ -11,12 +11,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
-
-      - name: Install node version manager
-        run: |
-          export NVM_DIR=~/.nvm
-          source ~/.nvm/nvm.sh
-          nvm install lts/dubnium
           
       - name: Install dependencies
         uses: php-actions/composer@v6
@@ -24,4 +18,13 @@ jobs:
           php_version: 7.4
           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
           version: 2.x
+          
+      - name: uploard artifact
+        run: zip -r highlearning.zip *
+      
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+#           name: highlearning
+          path: highlearning-website.zip
 
