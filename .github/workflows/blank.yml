@@ -27,4 +27,6 @@ jobs:
         with:
           name: hl-aritfact
           path: ./
+      - name: show all files
+        run: ls
 
