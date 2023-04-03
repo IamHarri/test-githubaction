@@ -19,14 +19,14 @@ jobs:
 #           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
 #           version: 2.x
           
-#       - name: uploard artifact
-#         run: zip -r highlearning.zip *
+      - name: uploard artifact
+        run: zip -r highlearning.zip *
       
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: hl-aritfact
-          path: ./
+          name: highlearning
+          path: highlearning.zip
       - name: show all files
         run: ls
 
