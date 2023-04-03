@@ -1,0 +1,53 @@
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/deralex/YamlConfigServiceProvider"
+    },
+    {
+      "type": "git",
+      "url": "https://github.com/pem-fr/rabbitmq-service-provider"
+    }
+  ],
+  "require": {
+    "dompdf/dompdf": "^0.6.1",
+    "cocur/slugify": "^3.1",
+    "doctrine/orm": "2.6.3",
+    "doctrine/cache": "^1.11",
+    "symfony/console": "^3.2",
+    "monolog/monolog": "^1.17",
+    "twig/twig": "^2.4",
+    "google/apiclient": "^2.2",
+    "silex/silex": "^2.2",
+    "symfony/finder": "^3.4",
+    "facebook/graph-sdk": "^5.6",
+    "mailin-api/mailin-api-php": "^1.0",
+    "incenteev/composer-parameter-handler": "^2.1",
+    "deralex/yaml-config-service-provider": "^2.0.x-dev",
+    "phpoffice/phpexcel": "1.8.1",
+    "twilio/sdk": "^5.5",
+    "elasticsearch/elasticsearch": "^5.0",
+    "knplabs/console-service-provider": "^2.2",
+    "m1/vars": "^1.1",
+    "php-amqplib/php-amqplib": "^2.7",
+    "pem-fr/rabbitmq-service-provider": "v1.1.0",
+    "lcobucci/jwt": "^3.2",
+    "basster/silex-simple-swagger-provider": "^2.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "phpmd/phpmd": "^2.6"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "": "modules/"
+    }
+  },
+  "config": {
+    "platform": {
+      "php": "7.4"
+    },
+    "optimize-autoloader": true
+  }
+}
