@@ -1,12 +1,21 @@
 name: high-learning-ci
-on: push
+on: 
+  push:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Define branch checkout'     
+        required: true
+        default: ${{ github.ref }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          
       - name: Use NodeJS to build
         uses: actions/setup-node@v2
         with:
