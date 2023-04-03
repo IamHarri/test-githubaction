@@ -17,4 +17,8 @@ jobs:
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           nvm install lts/dubnium
+      - name: Use Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.6.0'
           
