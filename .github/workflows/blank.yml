@@ -1,0 +1,21 @@
+name: high-learning-ci
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Use NodeJS to build
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install node version manager
+        run: |
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          
+      - name: check nvm
+        run: nvm --help
