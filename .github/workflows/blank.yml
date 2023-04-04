@@ -42,7 +42,7 @@ jobs:
           #sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
           for key in DATABASE_URL MAIL_HOST
           do
-            sed -i "s/$key=.*$/$key=$($key)/g" .env
+            sed -i "s/$key=.*$/$key=${{env.$(key)}}/g" .env
           done
           
       - name: upload artifact
