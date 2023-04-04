@@ -38,8 +38,8 @@ jobs:
           PHP_PORT: 6000
       - name: other replace
         run: |
-          sed -i "s/DATABASE_URL=*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
-          sed -i "s/MAIL_HOST=*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
+          sed -i "s/DATABASE_URL=.*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
+          sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
