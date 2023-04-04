@@ -9,7 +9,7 @@ on:
 #         default: ${{ github.ref }}
 env:
   ENV: develop
-  DATABASE_URL: "mysql:\/\/compy:li_jefw45678sd!@localhost:3306/compliancy?serverVersion=mariadb-10.6.12&charset=utf8mb4"
+  DATABASE_URL: 'mysql:\/\/compy:li_jefw45678sd!@localhost:3306/compliancy?serverVersion=mariadb-10.6.12&charset=utf8mb4'
   MAIL_HOST: newmail.jinglong.link
   FRONT_DOMAIN: prodss.compliancy.tekos.cloud
   MAILER_USERNAME: app.compliancy.com
