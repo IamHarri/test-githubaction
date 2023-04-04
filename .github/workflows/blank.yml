@@ -47,6 +47,8 @@ jobs:
         run: |
           sed -i "s/DATABASE_URL=.*$/DATABASE_URL=${{ env.DATABASE_URL }}/g" .env
           sed -i "s/MAIL_HOST=.*$/MAIL_HOST=${{ env.MAIL_HOST }}/g" .env
+          sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
+          sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ env.APP_SECRET }}/g" .env
 
           
       - name: upload artifact
