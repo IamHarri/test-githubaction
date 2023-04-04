@@ -7,6 +7,7 @@ on:
         description: 'Define branch checkout'     
         required: true
         default: ${{ github.ref }}
+        
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,6 +28,8 @@ jobs:
 #           php_version: 7.4
 #           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
 #           version: 2.x
+      - name: show aws region
+        run: echo $AWS_REGION
           
       - name: uploard artifact
         run: zip -r highlearning.zip *
