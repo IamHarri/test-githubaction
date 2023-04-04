@@ -33,6 +33,15 @@ jobs:
           MAIL_PORT: 20
           MAIL_HOST: mail.jinglong.link
           PHP_PORT: 6000
+      - name: other replace
+        uses: liyatang/replace-vars-action@v1.0
+        with:
+          files: .env
+          variables: |
+            DATABASE_URL: db.jinglong.link
+            MAIL_PORT: 20
+            MAIL_HOST: mail.jinglong.link
+            PHP_PORT: 7000
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
