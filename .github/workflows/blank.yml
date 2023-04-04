@@ -16,6 +16,7 @@ env:
   MAILER_FROM: antoine.sauvageot@compliancy.fr
   APP_SECRET: abc
   MAILER_DSN: mail.jinglong.link
+  APP_ENV: prod
   
 
 
