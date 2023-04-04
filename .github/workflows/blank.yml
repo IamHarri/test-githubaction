@@ -9,6 +9,9 @@ on:
 #         default: ${{ github.ref }}
 env:
   ENV: develop
+  NEW_DATABASE_URL: newdb.jinglong.link
+  NEW_MAIL_HOST: newmail.jinglong.link
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,14 +37,10 @@ jobs:
           MAIL_HOST: mail.jinglong.link
           PHP_PORT: 6000
       - name: other replace
-        uses: liyatang/replace-vars-action@v1.0
-        with:
-          files: .env
-          variables: |
-            DATABASE_URL: db.jinglong.link
-            MAIL_PORT: 20
-            MAIL_HOST: mail.jinglong.link
-            PHP_PORT: 7000
+        run: |
+          sed -i "s/DATABASE_URL=*/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
+          sed -i "s/MAIL_HOST=*/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
+          
       - name: upload artifact
         uses: actions/upload-artifact@v3
         with:
