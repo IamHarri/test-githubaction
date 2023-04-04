@@ -9,8 +9,8 @@ on:
 #         default: ${{ github.ref }}
 env:
   ENV: develop
-  NEW_DATABASE_URL: newdb.jinglong.link
-  NEW_MAIL_HOST: newmail.jinglong.link
+  DATABASE_URL: newdb.jinglong.link
+  MAIL_HOST: newmail.jinglong.link
 
 jobs:
   build:
@@ -38,8 +38,12 @@ jobs:
           PHP_PORT: 6000
       - name: other replace
         run: |
-          sed -i "s/DATABASE_URL=.*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
-          sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
+          #sed -i "s/DATABASE_URL=.*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
+          #sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
+          for key in DATABASE_URL MAIL_HOST
+          do
+            sed -i "s/$key=.*$/$key=$($key)/g" .env
+          done
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
