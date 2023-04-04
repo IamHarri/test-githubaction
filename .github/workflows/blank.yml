@@ -27,7 +27,7 @@ jobs:
 #           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
 #           version: 2.x
       - name: show aws region
-        run: echo $AWS_REGION
+        run: echo ${{ var.AWS_REGION }}
           
       - name: uploard artifact
         run: zip -r highlearning.zip *
