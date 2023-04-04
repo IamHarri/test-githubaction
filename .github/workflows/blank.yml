@@ -49,7 +49,7 @@ jobs:
           sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
           sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ env.APP_SECRET }}/g" .env
           sed -i "s/FRONT_PORT=.*$/FRONT_PORT=/g" .env
-          #sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=${{ env.FRONT_DOMAIN }}/g" .env
+          #sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=https://${{ env.FRONT_DOMAIN }}/g" .env
           sed -i "s/MAILER_USERNAME=.*$/MAILER_USERNAME=${{ env.MAILER_USERNAME }}/g" .env
           sed -i "s/MAILER_FROM=.*$/MAILER_FROM=${{ env.MAILER_FROM }}/g" .env
           sed -i "s/MAILER_DSN=.*$/MAILER_DSN=${{ env.MAILER_DSN }}/g" .env
