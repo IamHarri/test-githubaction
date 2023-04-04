@@ -33,7 +33,11 @@ jobs:
           MAIL_PORT: 20
           MAIL_HOST: mail.jinglong.link
           PHP_PORT: 6000
-          
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+         name: highlearning
+         path: ./
 #       - name: Install dependencies
 #         uses: php-actions/composer@v6
 #         with:
@@ -48,10 +52,8 @@ jobs:
 #       - name: uploard artifact
 #         run: zip -r highlearning.zip *
       
-#       - name: upload artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: highlearning
+
+         
 #       - name: show all files
 #         run: ls
 
