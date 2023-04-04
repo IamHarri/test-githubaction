@@ -30,7 +30,7 @@ jobs:
       - name: show aws region
         run: echo ${{ vars.AWS_REGION }}
       - name: show env
-        run: echo ${{ env.ENV }}
+        run: echo $ENV
           
       - name: uploard artifact
         run: zip -r highlearning.zip *
