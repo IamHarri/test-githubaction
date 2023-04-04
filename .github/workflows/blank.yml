@@ -32,25 +32,22 @@ jobs:
         with:
           node-version: 14.x
           
-      - name: Set variable
-        run: |
-          sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
-          sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ env.APP_SECRET }}/g" .env
-          sed -i "s/DATABASE_URL=.*$/DATABASE_URL=${{ env.DATABASE_URL }}/g" .env
-          sed -i "s/FRONT_PORT=.*$/FRONT_PORT=/g" .env
-          sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=${{ env.FRONT_DOMAIN }}/g" .env
-          sed -i "s/MAILER_USERNAME=.*$/MAILER_USERNAME=${{ env.MAILER_USERNAME }}/g" .env
-          sed -i "s/MAILER_FROM=.*$/MAILER_FROM=${{ env.MAILER_FROM }}/g" .env
-          sed -i "s/MAILER_DSN=.*$/MAILER_DSN=${{ env.MAILER_DSN }}/g" .env
-          
-#       - name: other replace
+#       - name: Set variable
 #         run: |
-#           #sed -i "s/DATABASE_URL=.*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
-#           #sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
-#           for key in DATABASE_URL MAIL_HOST
-#           do
-#             sed -i "s/$key=.*$/$key=${{env.$(key)}}/g" .env
-#           done
+#           sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
+#           sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ env.APP_SECRET }}/g" .env
+#           sed -i "s/DATABASE_URL=.*$/DATABASE_URL=${{ env.DATABASE_URL }}/g" .env
+#           sed -i "s/FRONT_PORT=.*$/FRONT_PORT=/g" .env
+#           sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=${{ env.FRONT_DOMAIN }}/g" .env
+#           sed -i "s/MAILER_USERNAME=.*$/MAILER_USERNAME=${{ env.MAILER_USERNAME }}/g" .env
+#           sed -i "s/MAILER_FROM=.*$/MAILER_FROM=${{ env.MAILER_FROM }}/g" .env
+#           sed -i "s/MAILER_DSN=.*$/MAILER_DSN=${{ env.MAILER_DSN }}/g" .env
+          
+      - name: other replace
+        run: |
+          #sed -i "s/DATABASE_URL=.*$/NEW_DATABASE_URL=${{ env.NEW_DATABASE_URL }}/g" .env
+          #sed -i "s/MAIL_HOST=.*$/NEW_MAIL_HOST=${{ env.NEW_MAIL_HOST }}/g" .env
+
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
