@@ -21,24 +21,37 @@ jobs:
         with:
           node-version: 14.x
           
+      - name: Replace env vars in file
+        # You may pin to the exact commit or the version.
+        # uses: falnyr/replace-env-vars-action@e593413a86fd8ef7f6a5861b805c953ef42bc272
+        uses: falnyr/replace-env-vars-action@v1.3.2
+        with:
+          # File for the replacement
+          filename: .env
+        env:
+          DATABASE_URL: db.jinglong.link
+          MAIL_PORT: 20
+          MAIL_HOST: mail.jinglong.link
+          PHP_PORT: 6000
+          
 #       - name: Install dependencies
 #         uses: php-actions/composer@v6
 #         with:
 #           php_version: 7.4
 #           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
 #           version: 2.x
-      - name: show aws region
-        run: echo ${{ vars.AWS_REGION }}
-      - name: show env
-        run: echo $ENV
+#       - name: show aws region
+#         run: echo ${{ vars.AWS_REGION }}
+#       - name: show env
+#         run: echo $ENV
           
-      - name: uploard artifact
-        run: zip -r highlearning.zip *
+#       - name: uploard artifact
+#         run: zip -r highlearning.zip *
       
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: highlearning
-      - name: show all files
-        run: ls
+#       - name: upload artifact
+#         uses: actions/upload-artifact@v3
+#         with:
+#           name: highlearning
+#       - name: show all files
+#         run: ls
 
