@@ -31,9 +31,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.x
-          
+        
       - name: show ssh file
-        run: ls -la ~/.ssh/
+        run: |
+         mkdir -p ~/.ssh
+         ls -la ~/.ssh
+      - name: generate key
+        run: |
+          ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
+      - name: show ssh file
+        run: |
+         mkdir -p ~/.ssh
+         ls -la ~/.ssh
           
       - name: other replace
         run: |
