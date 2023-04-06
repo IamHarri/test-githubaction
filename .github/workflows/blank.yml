@@ -1,5 +1,6 @@
 name: high-learning-ci
 on: 
+  workflow_dispatch:
   push:
 #   workflow_dispatch:
 #     inputs:
