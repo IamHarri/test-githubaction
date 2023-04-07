@@ -1,0 +1,29 @@
+imports:
+    - { resource: 'parameters.yml' }
+
+parameters:
+  database:
+    doctrine:
+      dbname: 'highlearning'
+      host: 'rds.prod.aurlom.local'
+      port: ~
+      user: 'administrator'
+      password: 'AiNSVw2bggeMn55Ckv9ySvWXI1KbCViJzDi5Ax4N'
+  broker:
+    rabbitmq:
+      connections:
+        default:
+          host: '127.0.0.1'
+          port: 5672
+          login: 'highlearning'
+          password: 'JhjUZxsAAZfhKHBu'
+          vhost: 'rmq.high-learning.com'
+  search:
+    elastic:
+      hosts:
+        - default:
+          host: 'elasticsearch.prod.aurlom.local'
+          port: '9200'
+          scheme: 'https'
+          user: 'highlearning'
+          pass: 'JhjUZxsAAZfhKHBu'
