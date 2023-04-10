@@ -44,11 +44,11 @@ jobs:
           RQ_PASSWORD: ${{ secrets.RQ_PASSWORD }}
           ES_PASSWORD: ${{ secrets.ES_PASSWORD }}
       - name: show value
-        run: cat prod.yaml
+        run: cat prod.yml
         
-#       - name: upload artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#          name: highlearning
-#          path: ./
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+         name: highlearning
+         path: ./
 
