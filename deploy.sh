@@ -30,4 +30,4 @@ parameters:
           scheme: 'https'
           user: 'highlearning'
           pass: '$3'
-" > prod.yml
+" > ./values.yaml
