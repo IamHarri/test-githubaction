@@ -38,7 +38,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run script
-        run: sh ./deploy.sh ${{ secrets.DB_PASSWORD }} ${{ secrets.RQ_PASSWORD }} ${{ secrets.RQ_PASSWORD }} ${{ secrets.ES_PASSWORD }}
+        run: sh ./deploy.sh "${{ secrets.DB_PASSWORD }}" "${{ secrets.RQ_PASSWORD }}" "${{ secrets.ES_PASSWORD }}"
 #         env:
 #           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
 #           RQ_PASSWORD: ${{ secrets.RQ_PASSWORD }}
