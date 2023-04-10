@@ -10,7 +10,7 @@ parameters:
       host: 'rds.prod.aurlom.local'
       port: ~
       user: 'administrator'
-      password: '$1'
+      password: '$0'
   broker:
     rabbitmq:
       connections:
@@ -18,7 +18,7 @@ parameters:
           host: '127.0.0.1'
           port: 5672
           login: 'highlearning'
-          password: '$2'
+          password: '$1'
           vhost: 'rmq.high-learning.com'
   search:
     elastic:
@@ -28,5 +28,5 @@ parameters:
           port: '9200'
           scheme: 'https'
           user: 'highlearning'
-          pass: '$3'
+          pass: '$2'
 " > parameters_prod.yml
