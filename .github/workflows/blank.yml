@@ -11,7 +11,7 @@ on:
       - info
       - warning
       - debug
-#   push:
+  push:
 #   workflow_dispatch:
 #     inputs:
 #       environment:
