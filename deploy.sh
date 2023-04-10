@@ -29,4 +29,4 @@ parameters:
           scheme: 'https'
           user: 'highlearning'
           pass: '$3'
-" > parameters_prod.yml
+" > prod.yml
