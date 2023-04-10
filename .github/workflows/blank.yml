@@ -44,7 +44,7 @@ jobs:
           RQ_PASSWORD: ${{ secrets.RQ_PASSWORD }}
           ES_PASSWORD: ${{ secrets.ES_PASSWORD }}
       - name: show value
-        run: cat parameters_prod.yaml
+        run: cat prod.yaml
         
 #       - name: upload artifact
 #         uses: actions/upload-artifact@v3
