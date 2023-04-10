@@ -14,16 +14,3 @@ parameters:
       connections:
         default:
           host: '127.0.0.1'
-          port: 5672
-          login: 'highlearning'
-          password: 'JhjUZxsAAZfhKHBu'
-          vhost: 'rmq.high-learning.com'
-  search:
-    elastic:
-      hosts:
-        - default:
-          host: 'elasticsearch.prod.aurlom.local'
-          port: '9200'
-          scheme: 'https'
-          user: 'highlearning'
-          pass: 'JhjUZxsAAZfhKHBu'
