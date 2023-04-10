@@ -11,7 +11,7 @@ on:
       - info
       - warning
       - debug
-  push:
+#   push:
 #   workflow_dispatch:
 #     inputs:
 #       environment:
@@ -40,8 +40,11 @@ jobs:
       - name: run script
         run: sh ./deploy.sh
         env:
-          USER: "Harry"
-          PASSWORD: "supperSecret"
+          DB_PASSWORD: db_password
+          RQ_PASSWORD: rq_password
+          ES_PASSWORD: es_password
+      - name: show value
+        run: cat parameters_prod.yaml
         
 #       - name: upload artifact
 #         uses: actions/upload-artifact@v3
