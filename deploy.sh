@@ -29,5 +29,5 @@ parameters:
           port: '9200'
           scheme: 'https'
           user: 'highlearning'
-          pass: '$4'
+          pass: '$3'
 " > prod.yml
