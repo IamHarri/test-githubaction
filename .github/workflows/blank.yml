@@ -38,11 +38,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: run script
-        run: sh ./deploy.sh
-        env:
-          DB_PASSWORD: db_password
-          RQ_PASSWORD: rq_password
-          ES_PASSWORD: es_password
+        run: sh ./deploy.sh ${{ secrets.DB_PASSWORD }} ${{ secrets.RQ_PASSWORD }} ${{ secrets.ES_PASSWORD }}
+#         env:
+#           DB_PASSWORD: db_password
+#           RQ_PASSWORD: rq_password
+#           ES_PASSWORD: es_password
       - name: show value
         run: cat parameters_prod.yaml
         
