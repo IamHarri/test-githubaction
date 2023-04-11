@@ -19,6 +19,6 @@ jobs:
         uses: actions/checkout@v2
         
       - name: Load fixture
-        if: ${{ github.event.inputs.is_run_fixture }} && (${{ env.environment }} == 'dev' || ${{ env.environment }} == 'stage')
+        if: ${{ github.event.inputs.is_run_fixture &&  (env.environment == 'dev' || env.environment == 'stage') }}
         run: |
           echo "the fixture command is ran"
