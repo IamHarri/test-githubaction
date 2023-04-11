@@ -9,7 +9,7 @@ on:
       default: false
   push:
 env:
-  environment: dev
+  environment: prod
 
 jobs:
   build:
