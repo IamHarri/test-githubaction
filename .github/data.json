@@ -17,6 +17,6 @@
     ".*": {
       "variable": ".env.dev",
       "front_domain": "dev.compliancy.teskos.cloud",
-      "mailer_dns": "${{ secrets.DEV_MAILER_DNS}}"
+      "mailer_dns": ${{ secrets.DEV_MAILER_DNS}}
     }
 }
