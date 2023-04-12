@@ -2,21 +2,21 @@
     "release/*": {
         "variable": ".env.stage",
         "front_domain": "stage.compliancy.teskos.cloud",
-        "mailer_dns": "${{ secret.DEV_MAILER_DNS}}"
+        "mailer_dns": "${{ secrets.DEV_MAILER_DNS}}"
     },
     "master": {
         "variable": ".env",
         "front_domain": "app.compliancy.fr",
-      "mailer_dns": "${{ secret.PROD_MAILER_DNS}}"
+      "mailer_dns": "${{ secrets.PROD_MAILER_DNS}}"
     },
     "develop": {
         "variable": ".env.dev",
         "front_domain": "dev.compliancy.teskos.cloud",
-        "mailer_dns": "${{ secret.DEV_MAILER_DNS}}"
+        "mailer_dns": "${{ secrets.DEV_MAILER_DNS}}"
     },
     "develop": {
       "variable": ".env.dev",
       "front_domain": "dev.compliancy.teskos.cloud",
-      "mailer_dns": "${{ secret.DEV_MAILER_DNS}}"
+      "mailer_dns": "${{ secrets.DEV_MAILER_DNS}}"
     }
 }
