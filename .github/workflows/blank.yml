@@ -5,32 +5,34 @@ on:
       - main
       - feature/*
 env:
-  PROD_BUILD_PATH: "./www.high-learning.com/src"
-  PREPROD_BUILD_PATH: "./preprod.high-learning.com/src"
+  PROD_BUILD_PATH: "${{ github.workspace }}/www.high-learning.com/src"
+  PREPROD_BUILD_PATH: "${{ github.workspace }}/preprod.high-learning.com/src"
 
 jobs:
   build:
     runs-on: ubuntu-latest
 #     defaults:
 #       run:
-#         working-directory: ${env.PROD_BUILD_PATH}
+#         working-directory: ${{ env.PROD_BUILD_PATH }}
     steps:
-
+      - name: create folder
+        run:
+          mkdir -p ${{ github.workspace }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          path: ${env.PROD_BUILD_PATH}
+          path: ${{ env.PROD_BUILD_PATH }}
         
       - name: create folder
         run: |
           mkdir -p ${env.PROD_BUILD_PATH}
           cp -r * 
-        working-directory: ${env.PROD_BUILD_PATH}
+        working-directory: ${{ env.PROD_BUILD_PATH }}
         
       - name: show files
         run: |
           pwd
           echo "-------------"
           ls -la
-        working-directory: ${env.PROD_BUILD_PATH}
+        working-directory: ${{ env.PROD_BUILD_PATH }}
 
