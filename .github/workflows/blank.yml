@@ -4,9 +4,6 @@ on:
     branches:
       - main
       - feature/*
-defaults:
-  run:
-    working-directory: "${{ github.workspace }}/www.high-learning.com/src"
 env:
   PROD_BUILD_PATH: "${{ github.workspace }}/www.high-learning.com/src"
   PREPROD_BUILD_PATH: "${{ github.workspace }}/preprod.high-learning.com/src"
@@ -14,9 +11,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-#     defaults:
-#       run:
-#         working-directory: ${{ env.PROD_BUILD_PATH }}
+    defaults:
+      run:
+        working-directory: ${{ env.PROD_BUILD_PATH }}
     steps:
 #       - name: create folder
 #         run:
