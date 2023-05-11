@@ -5,8 +5,8 @@ on:
       - main
       - feature/*
 env:
-  PROD_BUILD_PATH: ${GITHUB_WORKSPACE}/www.high-learning.com/src
-  PREPROD_BUILD_PATH: ${GITHUB_WORKSPACE}/preprod.high-learning.com/src
+  PROD_BUILD_PATH: "./www.high-learning.com/src"
+  PREPROD_BUILD_PATH: "./preprod.high-learning.com/src"
 
 jobs:
   build:
