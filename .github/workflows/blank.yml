@@ -4,6 +4,9 @@ on:
     branches:
       - main
       - feature/*
+defaults:
+  run:
+    working-directory: "${{ github.workspace }}/www.high-learning.com/src"
 env:
   PROD_BUILD_PATH: "${{ github.workspace }}/www.high-learning.com/src"
   PREPROD_BUILD_PATH: "${{ github.workspace }}/preprod.high-learning.com/src"
@@ -28,5 +31,5 @@ jobs:
           pwd
           echo "-------------"
           ls -la
-        working-directory: ${{ env.PROD_BUILD_PATH }}
+#         working-directory: ${{ env.PROD_BUILD_PATH }}
 
