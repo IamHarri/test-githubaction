@@ -11,17 +11,26 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ${env.PROD_BUILD_PATH}
+#     defaults:
+#       run:
+#         working-directory: ${env.PROD_BUILD_PATH}
     steps:
-      - name: create folder
-        run: mkdir -p ${env.PROD_BUILD_PATH}
+
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          path: ${env.PROD_BUILD_PATH}
+        
+      - name: create folder
+        run: |
+          mkdir -p ${env.PROD_BUILD_PATH}
+          cp -r * 
+        working-directory: ${env.PROD_BUILD_PATH}
+        
       - name: show files
         run: |
           pwd
           echo "-------------"
           ls -la
+        working-directory: ${env.PROD_BUILD_PATH}
 
