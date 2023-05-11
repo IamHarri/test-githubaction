@@ -23,12 +23,6 @@ jobs:
         with:
           path: ${{ env.PROD_BUILD_PATH }}
         
-      - name: create folder
-        run: |
-          mkdir -p ${env.PROD_BUILD_PATH}
-          cp -r * 
-        working-directory: ${{ env.PROD_BUILD_PATH }}
-        
       - name: show files
         run: |
           pwd
