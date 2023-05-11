@@ -15,9 +15,9 @@ jobs:
 #       run:
 #         working-directory: ${{ env.PROD_BUILD_PATH }}
     steps:
-      - name: create folder
-        run:
-          mkdir -p ${{ github.workspace }}
+#       - name: create folder
+#         run:
+#           mkdir -p ${{ github.workspace }}
       - name: Checkout
         uses: actions/checkout@v2
         with:
