@@ -48,4 +48,6 @@ jobs:
         with:
          name: env
          path: ./.env
+      - name: Check jq 
+        run: jq --help
 
