@@ -12,12 +12,11 @@ on:
       - warning
       - debug
   push:
-#   workflow_dispatch:
-#     inputs:
-#       environment:
-#         description: 'Define branch checkout'     
-#         required: true
-#         default: ${{ github.ref }}
+    branches:
+      - feature/*
+    paths:
+      - .github/*
+      
 env:
   ENV: develop
   DATABASE_URL: 'mysql:\/\/compy:li_jefw45678sd!@localhost:3306\/compliancy?serverVersion=mariadb-10.6.12&charset=utf8mb4'
