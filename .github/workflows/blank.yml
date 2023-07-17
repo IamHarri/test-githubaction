@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@v2
       - name: set env
         run: |
-          echo "${{ vars.ENV_FILE }}" > .env
+          echo "${{ secrets.ENV_FILE }}" > .env
           echo DATABASE_PASSWORD=password >>.env
           echo "-----------------------"
           cat .env
