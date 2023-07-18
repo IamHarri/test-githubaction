@@ -11,24 +11,6 @@ on:
       - info
       - warning
       - debug
-  push:
-#   workflow_dispatch:
-#     inputs:
-#       environment:
-#         description: 'Define branch checkout'     
-#         required: true
-#         default: ${{ github.ref }}
-env:
-  ENV: develop
-  DATABASE_URL: 'mysql:\/\/compy:li_jefw45678sd!@localhost:3306\/compliancy?serverVersion=mariadb-10.6.12&charset=utf8mb4'
-  MAIL_HOST: newmail.jinglong.link
-  FRONT_DOMAIN: prodss.compliancy.tekos.cloud
-  MAILER_USERNAME: app.compliancy.com
-  MAILER_FROM: antoine.sauvageot@compliancy.fr
-  APP_SECRET: abc
-  MAILER_DSN: mail.jinglong.link
-  APP_ENV: prod
-  
 
 
 jobs:
@@ -38,65 +20,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
           
-      - name: Use NodeJS to build
-        uses: actions/setup-node@v2
-        with:
-          node-version: 14.x
+      - name: check ansible version
+        run: |
+          ansible --version
+          echo "-------------------"
+          python3 --version
         
-      - name: show ssh file
-        run: |
-         mkdir -p ~/.ssh
-         ls -la ~/.ssh
-      - name: generate key
-        run: |
-          ssh-keygen -b 2048 -t rsa -f ~/.ssh/id_rsa -q -N ""
-      - name: show ssh file
-        run: |
-         mkdir -p ~/.ssh
-         ls -la ~/.ssh
-          
-      - name: other replace
-        run: |
-          sed -i "s/DATABASE_URL=.*$/DATABASE_URL=${{ env.DATABASE_URL }}/g" .env
-          sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
-          sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ env.APP_SECRET }}/g" .env
-          sed -i "s/FRONT_PORT=.*$/FRONT_PORT=/g" .env
-          sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=https:\/\/${{ env.FRONT_DOMAIN }}/g" .env
-          sed -i "s/MAILER_USERNAME=.*$/MAILER_USERNAME=${{ env.MAILER_USERNAME }}/g" .env
-          sed -i "s/MAILER_FROM=.*$/MAILER_FROM=${{ env.MAILER_FROM }}/g" .env
-          sed -i "s/MAILER_DSN=.*$/MAILER_DSN=${{ env.MAILER_DSN }}/g" .env
-      - name: Set variables
-        run: |
-          sed -i "s/APP_ENV=.*$/APP_ENV=${{ env.APP_ENV }}/g" .env
-          sed -i "s/APP_SECRET=.*$/APP_SECRET=${{ secrets.APP_SECRET }}/g" .env
-          sed -i "s/DATABASE_URL=.*$/DATABASE_URL=${{ secrets.DATABASE_URL }}/g" .env
-          sed -i "s/FRONT_PORT=.*$/FRONT_PORT=/g" .env
-          sed -i "s/FRONT_DOMAIN=.*$/FRONT_DOMAIN=https:\/\/${{ env.FRONT_DOMAIN }}/g" .env
-          sed -i "s/MAILER_USERNAME=.*$/MAILER_USERNAME=${{ env.MAILER_USERNAME }}/g" .env
-          sed -i "s/MAILER_FROM=.*$/MAILER_FROM=${{ env.MAILER_FROM }}/g" .env
-          sed -i "s/MAILER_DSN=.*$/MAILER_DSN=${{ secrets.MAILER_DSN }}/g" .env
-          
-      - name: upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-         name: highlearning
-         path: ./
-#       - name: Install dependencies
-#         uses: php-actions/composer@v6
-#         with:
-#           php_version: 7.4
-#           php_extensions: gd intl bcmath curl xml zip mbstring mysqli iconv pdo_mysql
-#           version: 2.x
-#       - name: show aws region
-#         run: echo ${{ vars.AWS_REGION }}
-#       - name: show env
-#         run: echo $ENV
-          
-#       - name: uploard artifact
-#         run: zip -r highlearning.zip *
-      
-
-         
-#       - name: show all files
-#         run: ls
 
