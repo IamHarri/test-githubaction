@@ -40,7 +40,7 @@ jobs:
           
       - name: user variable
         run: |
-          echo '${{ vars.ENV_FILE }}' >> .env
+          echo '${{ vars.ENV_FILE }}' > .env
           echo "DB_USERNAME=josijfoidsaofis" >> .env
           echo "DB_PASSWORD=jsdofisaifd" >> .env
           echo "DB_HOST=rds.dev.giveabet.local" >> .env
