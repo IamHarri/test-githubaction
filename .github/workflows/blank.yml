@@ -40,7 +40,7 @@ jobs:
           
       - name: user variable
         run: |
-          echo ${{ vars.ENV_FILE }} >> .env
+          echo '${{ vars.ENV_FILE }}' >> .env
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
