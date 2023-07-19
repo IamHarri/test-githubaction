@@ -41,6 +41,11 @@ jobs:
       - name: user variable
         run: |
           echo '${{ vars.ENV_FILE }}' >> .env
+          echo "DB_USERNAME=josijfoidsaofis" >> .env
+          echo "DB_PASSWORD=jsdofisaifd" >> .env
+          echo "DB_HOST=rds.dev.giveabet.local" >> .env
+          echo "APP_ENV=dev" >> .env
+          echo "FRONT_DOMAIN=iojsoidfj" >> .env
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
