@@ -34,13 +34,14 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/feature**'
+#     if: github.ref == 'refs/heads/feature**'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
           
       - name: user variable
         run: |
+          echo ${{github.ref}}
           echo '${{ vars.ENV_FILE }}' > .env
           echo "DB_USERNAME=josijfoidsaofis" >> .env
           echo "DB_PASSWORD=jsdofisaifd" >> .env
