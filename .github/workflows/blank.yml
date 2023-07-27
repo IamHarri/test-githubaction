@@ -34,7 +34,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }} && ( github.ref_name == 'main' || github.ref_name == 'develop' || github.ref_name == 'refs/heads/release' || github.ref_name == 'feature/*' )
+    if: ${{ github.event_name != 'pull_request' }} && ( github.ref_name == 'main' || github.ref_name == 'develop' || github.ref_name == 'release/*' )
     steps:
       - name: Checkout
         uses: actions/checkout@v2
