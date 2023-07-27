@@ -12,6 +12,8 @@ on:
       - warning
       - debug
   push:
+  pull_request:
+    types: [opened, reopened, synchronize]
 #   workflow_dispatch:
 #     inputs:
 #       environment:
@@ -49,6 +51,7 @@ jobs:
           echo "DB_HOST=rds.dev.giveabet.local" >> .env
           echo "APP_ENV=dev" >> .env
           echo "FRONT_DOMAIN=iojsoidfj" >> .env
+          exit -1
           
       - name: upload artifact
         uses: actions/upload-artifact@v3
